@@ -27,15 +27,16 @@ function getStreamers() {
       success: function(res) {
         //console.log(res);
         logo = res.logo;
-
         $.ajax({ // query stream info (get stream status)
           url: "https://api.twitch.tv/kraken/streams/" + i,
           headers: {
             'Client-ID': '821w445od23f4yucok8wjoxzcc7773'
           },
           success: function(res) {
-            description = res.stream == null ? 'Offline' : res.stream.channel.status
-            $('#streamersAll').append('<p>' + i + ': ' + description + '</p>'); // refresh results
+            description = res.stream == null ? 'Offline' : res.stream.channel.status;
+            $('#streamersAll').append('<p>' +
+              '<img src="' + logo + '" height="50" width="50">' +
+              i + ': ' + description + '</p>'); // refresh results
           },
           error: function(error){
             console.log(error);
@@ -48,7 +49,9 @@ function getStreamers() {
         if (error.status == 404){
           logo = 'https://unsplash.it/50/50?image=2';
           description = 'Not found';
-          $('#streamersAll').append('<p>' + i + ': ' + description + '</p>');
+          $('#streamersAll').append('<p>' +
+            '<img src="' + logo + '" height="50" width="50">' +
+            i + ': ' + description + '</p>');
         }
       }
     }); // end of .ajax() "channel info"
