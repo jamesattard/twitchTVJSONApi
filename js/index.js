@@ -8,12 +8,12 @@ function getStreamers() {
     ];
 
   twitchChannels.map(function(channel) {
-    $.ajax({ // query channel info (determine if username exists)
+    $.ajax({ // determine if stream is online or not
       // url: "https://api.twitch.tv/kraken/streams/" + channel,
       // headers: {
       //   'Client-ID': '821w445od23f4yucok8wjoxzcc7773'
       // },
-      url: "https://wind-bow.gomix.me/twitch-api/streams/" + channel + '?callback=?',
+      url: "https://wind-bow.gomix.me/twitch-api/streams/" + channel,
       dataType: 'json',
       success: function(res) {
         var game,
@@ -26,16 +26,16 @@ function getStreamers() {
           status = "online";
         };
 
-        $.ajax({ // query stream info (get stream status)
+        $.ajax({ // get channel information
           // url: "https://api.twitch.tv/kraken/channels/" + channel,
           // headers: {
           //   'Client-ID': '821w445od23f4yucok8wjoxzcc7773'
           // },
-          url: "https://wind-bow.gomix.me/twitch-api/channels/" + channel + '?callback=?',
+          url: "https://wind-bow.gomix.me/twitch-api/channels/" + channel,
           dataType: 'json',
           success: function(res) {
-            //console.log(res);
-            //console.log(game, status);
+            console.log(res);
+            game = res.url === undefined ? 'Account not found!' : game;
             var logo = res.logo != null ? res.logo : "https://dummyimage.com/50x50&text=X",
               name = res.display_name != null ? res.display_name : channel,
               description = status === "online" ? ': ' + res.status : "",
@@ -46,7 +46,7 @@ function getStreamers() {
               name + '</a></div><div class="col-xs-10 col-sm-8" id="streaming">'+
               game + '<span class="hidden-xs">' +
               description + '</span></div></div>';
-            console.log(html);
+            //console.log(html);
             status === "online" ? $("#streamerList").prepend(html) : $("#streamerList").append(html);
 
             } // end of ajax success call #2 function
