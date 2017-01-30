@@ -7,10 +7,6 @@ function getStreamers() {
       "doesnotexist1"
     ];
 
-  var channelStatus,
-      streamStatus,
-      logo;
-
   twitchChannels.map(function(channel) {
     $.ajax({ // query channel info (determine if username exists)
       // url: "https://api.twitch.tv/kraken/streams/" + channel,
