@@ -4,7 +4,14 @@ function getStreamers() {
     [
       "ESL_SC2",
       "freecodecamp",
-      "doesnotexist1"
+      "doesnotexist1",
+      "OgamingSC2",
+      "cretetion",
+      "storbeck",
+      "habathcx",
+      "RobotCaleb",
+      "noobs2ninjas",
+      "jamesattard1"
     ];
 
   twitchChannels.map(function(channel) {
@@ -34,16 +41,16 @@ function getStreamers() {
           url: "https://wind-bow.gomix.me/twitch-api/channels/" + channel,
           dataType: 'json',
           success: function(res) {
-            console.log(res);
-            game = res.url === undefined ? 'Account not found!' : game;
+            game = res.url === undefined ? 'Offline (Account not found!)' : game;
+            res.url = res.url === undefined ? '' : res.url;
             var logo = res.logo != null ? res.logo : "https://dummyimage.com/50x50&text=X",
               name = res.display_name != null ? res.display_name : channel,
               description = status === "online" ? ': ' + res.status : "",
               html = '<div class="row ' +
-              status + '"><div class="col-xs-2 col-sm-1" id="icon"><img src="' +
-              logo + '" class="logo" height="50" width="50"></div><div class="col-xs-10 col-sm-3" id="name"><a href="' +
+              status + '"><div class="col-xs-2 col-sm-1" id="twitchLogo"><img src="' +
+              logo + '" class="logo" height="50" width="50"></div><div class="col-xs-10 col-sm-3" id="twitchName"><a href="' +
               res.url + '" target="_blank">' +
-              name + '</a></div><div class="col-xs-10 col-sm-8" id="streaming">'+
+              name + '</a></div><div class="col-xs-10 col-sm-8" id="twitchDescription">'+
               game + '<span class="hidden-xs">' +
               description + '</span></div></div>';
             //console.log(html);
