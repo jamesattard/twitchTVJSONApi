@@ -1,5 +1,5 @@
-a, a:link, a:visited, a:hover, a:active, #streamerList {
-    color: hotpink;
+a, a:link, a:visited, a:hover, a:active {
+  color: #2a2a2a;
 }
 
 body {
@@ -23,9 +23,7 @@ h1 {
 .container {
   background-color: #2a2a2a;
   border-radius:5px;
-  display: flex;
   padding: 5%;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 1%;
@@ -38,8 +36,31 @@ h1 {
   margin-top: 1%;
 }
 
+.offline {
+  background-color: #ff6666;
+  color: white;
+  font-weight: bold;
+}
+
+.online{
+  background-color: #99ff66;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+
+.row {
+  border-style: solid;
+  border-width: medium;
+  border-color: #2a2a2a;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
 .selectorButtons {
   padding-bottom: 5%;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {
@@ -47,6 +68,27 @@ h1 {
   margin: auto;
 }
 
-#streamerList {
-  padding-bottom: 5%;
+#twitchLogo {
+  background-color: black;
+  padding-right: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+  border-radius: 5px;
+}
+
+#twitchName {
+  padding-right: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+#twitchDescription {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
 }
