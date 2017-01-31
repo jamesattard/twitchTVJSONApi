@@ -65,4 +65,16 @@ function getStreamers() {
 
 $(document).ready(function() {
   getStreamers();
+  $('#allBtn').click(function() {
+    $('.offline').show();
+    $('.online').show();
+  });
+  $('#onlineBtn').click(function() {
+    $('.offline').hide();
+    $('.online').show();
+  });
+  $('#offlineBtn').click(function() {
+    $('.offline').show();
+    $('.online').hide();
+  });
 });

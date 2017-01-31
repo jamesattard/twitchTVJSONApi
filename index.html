@@ -22,37 +22,34 @@
     <!-- Twitch Streamers Box -->
     <div class="container">
 
-      <!-- Menu -->
-      <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#all">All</a></li>
-        <li><a data-toggle="tab" href="#online">Online</a></li>
-        <li><a data-toggle="tab" href="#offline">Offline</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <div id="all" class="tab-pane fade in active">
-        </div>
-        <div id="online" class="tab-pane fade">
-        </div>
-        <div id="offline" class="tab-pane fade">
-        </div>
+      <!-- Selector buttons: All, Online, Offline -->
+      <div class="selectorButtons">
+        <button id="allBtn" type = "button" class = "btn btn-primary btn-xs">
+           All
+        </button>
+        <button id="onlineBtn" type = "button" class = "btn btn-success btn-xs">
+           Online
+        </button>
+        <button id="offlineBtn" type = "button" class = "btn btn-danger btn-xs">
+           Offline
+        </button>
       </div>
 
-      <div id="streamerList"></div>
-
-      <!-- Example of a typical row entry
-      <div class="row offline">
-        <div class="col-xs-2 col-sm-1" id="twitchLogo">
-          <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png" class="logo" height="50" width="50">
+      <div id="streamerList">
+        <!-- Example of a typical row entry
+        <div class="row offline">
+          <div class="col-xs-2 col-sm-1" id="twitchLogo">
+            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png" class="logo" height="50" width="50">
+          </div>
+          <div class="col-xs-10 col-sm-3" id="twitchName">
+            <a href="https://www.twitch.tv/freecodecamp" target="_blank">FreeCodeCamp</a>
+          </div>
+          <div class="col-xs-10 col-sm-8" id="twitchDescription">
+            Offline<span class="hidden-xs"></span>
+          </div>
         </div>
-        <div class="col-xs-10 col-sm-3" id="twitchName">
-          <a href="https://www.twitch.tv/freecodecamp" target="_blank">FreeCodeCamp</a>
-        </div>
-        <div class="col-xs-10 col-sm-8" id="twitchDescription">
-          Offline<span class="hidden-xs"></span>
-        </div>
+        -->
       </div>
-      -->
 
     </div>
 
